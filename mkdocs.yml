@@ -1,0 +1,68 @@
+site_name: Visualization Study Note
+site_url: 
+repo_url: 
+repo_name: Visualization Study Note
+theme: 
+  name: material
+  language: zh
+  custom_dir: overrides
+  features:
+    - navigation.indexes
+    - navigation.tabs
+    - navigation.tracking
+
+nav:
+  - 简介: 
+    - index.md
+    - 关于本项目: index.md
+  - 可视数据分析: 
+    - VisualDataAnalytics/index.md
+    - 说明: VisualDataAnalytics/index.md
+    - 简介: VisualDataAnalytics/intro.md
+    - 可视化 I: VisualDataAnalytics/visualization-I.md
+    - 可视化 II: VisualDataAnalytics/visualization-II.md
+    - 数据重构与插值 I: VisualDataAnalytics/interpolation-I.md
+    - 数据重构与插值 II: VisualDataAnalytics/interpolation-II.md
+    - 等值线与等值面: VisualDataAnalytics/isosurfaces.md
+    - 体数据可视化: VisualDataAnalytics/volumes.md
+    - 流数据可视化 I: VisualDataAnalytics\flowvis-I.md
+    - 流数据可视化 II: VisualDataAnalytics\flowvis-II.md
+    - 数据映射转化 I: VisualDataAnalytics\mapping-I.md
+    - 数据映射转化 II: VisualDataAnalytics\mapping-II.md
+    - 科学数据的可视化分析: VisualDataAnalytics\visual-analysis.md
+
+markdown_extensions:
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - attr_list
+  - pymdownx.tabbed:
+      alternate_style: true 
+  - tables
+  - def_list
+  - pymdownx.keys
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
+  - md_in_html
+extra_javascript:
+  - https://code.jquery.com/jquery-3.6.0.slim.min.js
+  - javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  - https://cdn.datatables.net/1.11.4/js/jquery.dataTables.js
+  - javascripts/site.js
+extra_css:
+  - https://cdn.datatables.net/1.11.4/css/jquery.dataTables.css
+
+plugins:
+  - search:
+      separator: '[\s\-\.]'
