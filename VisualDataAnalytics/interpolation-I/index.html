@@ -425,9 +425,174 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          数据重构与插值 I
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         数据重构与插值 I
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#data-reconstruction" class="md-nav__link">
+    Data reconstruction 数据重构
+  </a>
+  
+    <nav class="md-nav" aria-label="Data reconstruction 数据重构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    描述
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#continuous-representation" class="md-nav__link">
+    Continuous representation 连续表示
+  </a>
+  
+    <nav class="md-nav" aria-label="Continuous representation 连续表示">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    任务说明
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#radial-basis-functions" class="md-nav__link">
+    光滑：Radial Basis Functions 径向基函数
+  </a>
+  
+    <nav class="md-nav" aria-label="光滑：Radial Basis Functions 径向基函数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    基本表示与特性
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    缺点
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#varphir" class="md-nav__link">
+    改进：选择不同的径向函数 \(\varphi(r)\)
+  </a>
+  
+    <nav class="md-nav" aria-label="改进：选择不同的径向函数 \(\varphi(r)\)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    插值性质的证明
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    改进后的优缺点分析
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#triangulation" class="md-nav__link">
+    不光滑：triangulation 三角剖分
+  </a>
+  
+    <nav class="md-nav" aria-label="不光滑：triangulation 三角剖分">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    理想的三角剖分
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delaunay" class="md-nav__link">
+    Delaunay 三角剖分
+  </a>
+  
+    <nav class="md-nav" aria-label="Delaunay 三角剖分">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    准则
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    特性
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -572,6 +737,155 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#data-reconstruction" class="md-nav__link">
+    Data reconstruction 数据重构
+  </a>
+  
+    <nav class="md-nav" aria-label="Data reconstruction 数据重构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    描述
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#continuous-representation" class="md-nav__link">
+    Continuous representation 连续表示
+  </a>
+  
+    <nav class="md-nav" aria-label="Continuous representation 连续表示">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    任务说明
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#radial-basis-functions" class="md-nav__link">
+    光滑：Radial Basis Functions 径向基函数
+  </a>
+  
+    <nav class="md-nav" aria-label="光滑：Radial Basis Functions 径向基函数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    基本表示与特性
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    缺点
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#varphir" class="md-nav__link">
+    改进：选择不同的径向函数 \(\varphi(r)\)
+  </a>
+  
+    <nav class="md-nav" aria-label="改进：选择不同的径向函数 \(\varphi(r)\)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    插值性质的证明
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    改进后的优缺点分析
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#triangulation" class="md-nav__link">
+    不光滑：triangulation 三角剖分
+  </a>
+  
+    <nav class="md-nav" aria-label="不光滑：triangulation 三角剖分">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    理想的三角剖分
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delaunay" class="md-nav__link">
+    Delaunay 三角剖分
+  </a>
+  
+    <nav class="md-nav" aria-label="Delaunay 三角剖分">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    准则
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    特性
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -585,6 +899,98 @@
 
 
 <h1 id="data-reconstruction-and-interpolation-i">Data Reconstruction and Interpolation I</h1>
+<h2 id="data-reconstruction">Data reconstruction 数据重构</h2>
+<h3 id="_1">描述</h3>
+<p>将离散的样本转化为连续的表示。</p>
+<h2 id="continuous-representation">Continuous representation 连续表示</h2>
+<h3 id="_2">任务说明</h3>
+<p>给定分散的点的集合 <span class="arithmatex">\(p_i\)</span>，以及其标量值 <span class="arithmatex">\(f_i\)</span>。构造连续函数 <span class="arithmatex">\(f\)</span> 使得 <span class="arithmatex">\(f\)</span> 能大体表示 <span class="arithmatex">\((p_i,f_i)\)</span> 的情况。</p>
+<h3 id="radial-basis-functions">光滑：Radial Basis Functions 径向基函数</h3>
+<h4 id="_3">基本表示与特性</h4>
+<div class="arithmatex">\[f(\pmb{x}) = \sum\limits_{i=1}^{N}w_i\varphi(||p_i-\pmb{x}||)\]</div>
+<ul>
+<li>每一对 <span class="arithmatex">\((p_i,f_i)\)</span> 都会对 <span class="arithmatex">\(f(\pmb{x})\)</span> 造成影响，取决于欧氏距离 <span class="arithmatex">\(r=||p_i-\pmb{x}||\)</span>，点距离越近造成的影响越大；</li>
+<li><span class="arithmatex">\(\varphi(r)\)</span> 函数：<ul>
+<li><span class="arithmatex">\(\varphi(r)=\varphi(||p_i-\pmb{x}||)\)</span> 相对 <span class="arithmatex">\(p_i\)</span> 对称，且随着 <span class="arithmatex">\(r\)</span> 的增大，<span class="arithmatex">\(\varphi(r)\)</span> 下降非常迅速；</li>
+<li>教材给出的一种方案是 <span class="arithmatex">\(\varphi(r)=e^{-r^2}\)</span>；</li>
+</ul>
+</li>
+<li><span class="arithmatex">\(w_i\)</span> 量：<ul>
+<li><span class="arithmatex">\(w_i\)</span> 使得 <span class="arithmatex">\(f(\pmb{x})\)</span> 经过所有的 <span class="arithmatex">\((p_i,f_i)\)</span>，即<strong>插值</strong>；</li>
+<li><span class="arithmatex">\(w_i\)</span> 可以这样计算，列出下列公式后，等式左侧同乘矩阵的逆即可解决。也可以通过展开列出方程组解决。在解决这样的计算时，如果 <span class="arithmatex">\(\varphi(r)\)</span> 非常小则可以近似为 <span class="arithmatex">\(0\)</span>：</li>
+</ul>
+</li>
+</ul>
+<div class="arithmatex">\[
+\left[
+\begin{matrix}
+ \varphi(||p_1-p_1||)      &amp; \varphi(||p_2-p_1||)      &amp; \cdots &amp; \varphi(||p_N-p_1||)      \\
+ \varphi(||p_1-p_2||)      &amp; \varphi(||p_2-p_1||)      &amp; \cdots &amp; \varphi(||p_N-p_2||)      \\
+ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+ \varphi(||p_1-p_N||)      &amp; \varphi(||p_2-p_N||)      &amp; \cdots &amp; \varphi(||p_N-p_N||)      \\
+\end{matrix}
+\right]
+\left[
+\begin{matrix}
+ w_1      \\
+ w_2      \\
+ \vdots \\
+ w_N      \\
+\end{matrix}
+\right]
+=
+\left[
+\begin{matrix}
+ f_1      \\
+ f_2      \\
+ \vdots \\
+ f_N      \\
+\end{matrix}
+\right]
+\]</div>
+<h4 id="_4">缺点</h4>
+<ul>
+<li>每个采样点都会影响整个系统；</li>
+<li>每次新增结点，都会重新计算整个系统；</li>
+<li>计算复杂度很高（需要解线性方程）；</li>
+</ul>
+<h4 id="varphir">改进：选择不同的径向函数 <span class="arithmatex">\(\varphi(r)\)</span></h4>
+<div class="arithmatex">\[\varphi(r)=\frac{\frac{1}{r^2}}{\sum\limits_{i=1}^{N}{\frac{1}{d_i}}}\]</div>
+<p>其中 <span class="arithmatex">\(d_i=||p_i-\pmb{x}||\)</span>，这样可以得出：</p>
+<div class="arithmatex">\[f(\pmb{x})=\sum\limits_{i=1}^{N}f_i\varphi(||p_i-\pmb{x}||)=\frac{\sum\limits_{i=1}^{N}\frac{f_i}{||p_i-\pmb{x}||^2}}{\sum\limits_{i=1}^{N}\frac{1}{||p_i-\pmb{x}||^2}}\]</div>
+<h5 id="_5">插值性质的证明</h5>
+<p>对于特定的某项 <span class="arithmatex">\(f_t\varphi(||p_t-\pmb{x}||)\)</span> 可以表示为：</p>
+<div class="arithmatex">\[f_t\varphi(||p_t-\pmb{x}||)=\frac{\frac{f_t}{||p_t-\pmb{x}||^2}}{\sum\limits_{i=1}^{N}{\frac{1}{||p_i-\pmb{x}||}}}\]</div>
+<p>当 <span class="arithmatex">\(x\not=t\)</span> 时，根据 <span class="arithmatex">\(\varphi(r)\)</span> 单调迅速递减的性质，其值近似于 0。当 <span class="arithmatex">\(x=t\)</span> 时，函数趋近于 <span class="arithmatex">\(f_t\)</span>。</p>
+<h4 id="_6">改进后的优缺点分析</h4>
+<ul>
+<li>优点：省略计算步骤（不用求方程组）；</li>
+<li>缺点：每个点仍对整个函数造成影响；</li>
+</ul>
+<h3 id="triangulation">不光滑：triangulation 三角剖分</h3>
+<h4 id="_7">理想的三角剖分</h4>
+<ol>
+<li>三角形有良好的横纵比，尽量“圆”，避免过长；</li>
+<li>最大化最小的角度；</li>
+<li>最大化内接圆半径与外接圆半径比；</li>
+<li>Delaunay 三角剖分是一种最佳方案；</li>
+</ol>
+<h4 id="delaunay">Delaunay 三角剖分</h4>
+<h5 id="_8">准则</h5>
+<p>如果要满足 Delaunay 三角剖分的定义，需要符合两个准则：</p>
+<ol>
+<li>空圆特性：在 Delaunay 三角形网中任一三角形外接圆内不会存在其他点；</li>
+<li>最大化最小角：在点集形成的所有三角剖分中，Delaunay 三角剖分形成的三角形的最小角最大；</li>
+</ol>
+<h5 id="_9">特性</h5>
+<ol>
+<li>最接近：以最近的三个点形成三角形，各个线段互不相交；</li>
+<li>唯一性：无论从哪个区域开始构建，最终结果相同；</li>
+<li>最优性：任意两个相邻三角形组成的凸四边形的对角线如可以互换，则两个三角形六个内角中最小角不会变大；</li>
+<li>最规则：如果将三角网中每个三角形的最小角升序排列，则 Delaunay 三角剖分得到的数值越大（排名靠后）；</li>
+<li>区域性：新增、删除、移动某顶点时只会影响临近的三角形；</li>
+<li>凸多边形外围：三角网最外层边界围成一个凸多边形。</li>
+</ol>
 
               
             </article>
