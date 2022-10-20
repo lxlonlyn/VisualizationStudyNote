@@ -30,6 +30,10 @@ nav:
     - 数据映射转化 I: VisualDataAnalytics\mapping-I.md
     - 数据映射转化 II: VisualDataAnalytics\mapping-II.md
     - 科学数据的可视化分析: VisualDataAnalytics\visual-analysis.md
+  - 论文: 
+    - papers\index.md
+    - Spatial and Temporal Constrained Ranked Retrieval over Videos: papers\Spatial and Temporal Constrained Ranked Retrieval over Videos.md
+    - "EVA: A Symbolic Approach to Accelerating Exploratory Video Analytics with Materialized Views": papers\eva.md
 
 markdown_extensions:
   - pymdownx.arithmatex:
@@ -53,6 +57,9 @@ markdown_extensions:
   - pymdownx.mark
   - pymdownx.tilde
   - md_in_html
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
 extra_javascript:
   - https://code.jquery.com/jquery-3.6.0.slim.min.js
   - javascripts/mathjax.js
