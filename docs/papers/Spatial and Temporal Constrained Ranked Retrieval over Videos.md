@@ -4,7 +4,7 @@
 
 [原文 PDF](origin/Spatial%20and%20Temporal%20Constrained%20Ranked%20Retrieval%20over%20Videos.pdf)
 
-[讲解 PPT](ppt/2022.10.18%20Spatial%20and%20Temporal%20Constrained%20Ranked%20Retrieval%20over%20Videos.pptx)
+[讲解 PPT](ppt/2022.10.18%20STAR%20Retrievals.pptx)
 
 ## 问题定义
 
