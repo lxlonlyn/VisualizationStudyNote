@@ -32,8 +32,12 @@ nav:
     - 科学数据的可视化分析: VisualDataAnalytics\visual-analysis.md
   - 论文: 
     - papers\index.md
-    - Spatial and Temporal Constrained Ranked Retrieval over Videos: papers\Spatial and Temporal Constrained Ranked Retrieval over Videos.md
-    - "EVA: A Symbolic Approach to Accelerating Exploratory Video Analytics with Materialized Views": papers\eva.md
+    - "STAR Retrieval": papers\star_retrieval\index.md
+    - "EVA": papers\eva\index.md
+    - "Libra": papers\libra\index.md
+    - "Lyra 2": papers\lyra2\index.md
+  - D3:
+    - D3\index.md
 
 markdown_extensions:
   - pymdownx.arithmatex:

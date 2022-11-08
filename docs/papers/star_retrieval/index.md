@@ -2,9 +2,9 @@
 
 ## 相关文件 
 
-[原文 PDF](origin/Spatial%20and%20Temporal%20Constrained%20Ranked%20Retrieval%20over%20Videos.pdf)
+[原文 PDF](paper.pdf)
 
-[讲解 PPT](ppt/2022.10.18%20STAR%20Retrievals.pptx)
+[讲解 PPT](slides.pptx)
 
 ## 问题定义
 
