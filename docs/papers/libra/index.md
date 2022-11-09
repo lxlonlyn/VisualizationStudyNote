@@ -1,5 +1,11 @@
 # Libra: An Interaction Model for Data Visualization
 
+## 相关文件
+
+[原文 PDF](paper.pdf)
+
+[官网地址](https://libra-js.github.io/)
+
 ## 主要介绍
 
 提出了模型 Libra，为图交互提供了工具及相关范例。
