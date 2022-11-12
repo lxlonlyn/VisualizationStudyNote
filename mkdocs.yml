@@ -38,6 +38,10 @@ nav:
     - "Lyra 2": papers\lyra2\index.md
   - D3:
     - D3\index.md
+    - libra: D3\libra.md
+  - 其他参考:
+    - others\index.md
+    - "利用 Libra 模型解释 Lyra 2 的相关操作": others\libra&lyra2.md 
 
 markdown_extensions:
   - pymdownx.arithmatex:
