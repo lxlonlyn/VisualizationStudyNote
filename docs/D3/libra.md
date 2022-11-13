@@ -267,7 +267,7 @@ InstrumentDefinition 对象包含以下属性：
 
 通过 `Libra.Interactor.initialize(className, option)` 进行初始化，参数说明如下：
 
-|参数|类型|描述|例子|
+| 参数 |类型|描述|例子|
 |:-:|:-:|:-:|:-:|
 | className | string | 交互器类名 | "MouseTraceInteractor" |
 | option | InteractorOption | 设置选项 |  |
@@ -345,34 +345,212 @@ InteractorDefinition 对象包含以下属性：
 
 ### 初始化
 
+通过 `Libra.Layer.initialize(className, option)` 进行初始化，参数说明如下：
+
+| 参数 | 类型 | 描述 | 例子 |
+| :-: | :-: | :-: | :-: |
+| className | string | 渲染图层的类别 | "D3Layer" |
+| option | LayerOption | 设置选项 |  |
+
+LayerOption 对象包含以下属性：
+
+| 属性 | 类型 | 描述 | 例子 |
+| :-: | :-: | :-: | :-: |
+| name | string | 图层名称 | "mainLayer" |
+| width | number | 图层宽度 | 500 |
+| height | number | 图层高度 | 500 |
+| offset | {x: number, y: number} | 容器坐标偏差值 |  |
+| container | D3 Group | 容器坐标偏差值 | 带有 "g" 元素的 D3 选择 |
+
 ### 注册
+
+如果使用 D3 以外的可视化引擎，则需要注册，通过 `Libra.Layer.register(className, definition)` 进行，参数说明如下：
+
+| 参数 | 类型 | 描述 | 例子 |
+| :-: | :-: | :-: | :-: |
+| className | string | 自定义图层的类别 | "VegaLayer" |
+| definition | LayerDefinition |  |  |
+
+LayerDefinition 对象包含以下属性：
+
+| 属性 | 类型 | 描述 | 例子 |
+| :-: | :-: | :-: | :-: |
+| constructor | Layer | 该类的基类，可以在此基础上扩展 |  |
+| ...LayerOption | ...LayerOption |  |
 
 ### 注销
 
+通过 `Libra.Layer.unregister(className)` 进行注销，`className` 与注册时 `className` 相同。
+
 ### 查找
 
+通过 `Instrument.findInstrument(classNameOrName)` 查找图层实例，可以是图层名，或者是图层类名。
+
 ### 实例 API
+
+#### getGraphic
+
+获取图层的 DOM 元素。
+
+#### getContainerGraphic
+
+获取图层容器的 DOM 元素。
+
+#### getVisualElement
+
+获取图层上的可见元素。
+
+#### getLayerFromQueue
+
+根据名称，获取同级图层。
+
+#### setLayersOrder
+
+调整图层的栈结构。当值为 -1 时表示该图层不可见。
+
+| 参数 | 类型 | 描述 | 
+| :-: | :-: | :-: |
+| layerNameOrderKVPairs | {[key: string]: number} | 定义了图层的顺序，每个图层具有对应权值，权值越高越会显示在顶部 |
+
+#### picking
+
+获取图层上的可视元素。
+
+#### isInstanceOf
+
+判定图层实例是否是指定的图层类型（图层类）。
+
+| 参数 | 类型 | 描述 | 例子 |
+| :-: | :-: | :-: | :-: |
+| className | string | 图层类(图层类) | "D3Layer" | 
 
 ## 转换器
 
 ### 初始化
 
+通过 `Libra.GraphicalTransformer.initialize(className, option)` 进行初始化，参数说明如下：
+
+| 参数 |类型|描述|例子|
+|:-:|:-:|:-:|:-:|
+| className | string | 转换器类名 | "drawDelegateTransformer" |
+| option | TransformerOption | 设置选项 |  |
+
+TransformerOption 对象包含以下属性：
+
+| 属性 | 类型 | 描述 | 例子 |
+| :-: | :-: | :-: | :-: |
+| layer | Layer | 转换器作用图层 | mainLayer |
+| sharedVar | object | 服务与转换器间的共享变量 |  |
+| redraw | Function ({layer: Layer, transformer: Transformer}) => void | 渲染函数，用于渲染可视化 |  |
+| transient | boolean | 渲染内容是临时的还是永久的 | true |
+
 ### 注册
+
+通过 `Libra.GraphicalTransformer.register(className, definition)` 进行注册，参数说明如下：
+
+| 参数 | 类型 | 描述 | 例子 |
+| :-: | :-: | :-: | :-: |
+| className | string | 转换器类名，将会在初始化步骤使用 | "drawDelegateTransformer" |
+| option | TransformerOption |  |  |
 
 ### 注销
 
+通过 `Libra.GraphicalTransformer.unregister(className)` 进行注销，`className` 与注册时 `className` 相同。
+
 ### 内置转换器
 
+| 转换器名 | 描述 |
+| :-: | :-: |
+| TransientRectangleTransformer | 绘制临时矩形，在 BrushInstrument、BrushXInstrument、BrushYInstrument 中使用 |
+| SelectionTransformer | 绘制图层上的选取元素，在服务中的选择服务中被使用 |
+| HelperLineTransformer | 在屏幕上绘制辅助线，支持水平或竖直，在 HelperLineInstrument 中使用 |
+
 ### 实例 API
+
+#### getSharedVar
+
+获取工具的共享变量，返回对应的变量值。
+
+| 参数 | 类型 | 描述 |
+| :-: | :-: | :-: |
+| sharedName | string | 共享变量的名字 |
+
+#### setSharedVar
+
+设置共享变量的值。
+
+| 参数 | 类型 | 描述 |
+| :-: | :-: | :-: |
+| sharedName | string | 共享变量的名字 |
+| value | any | 共享变量的值 |
+
+#### setSharedVars
+
+设置多个共享变量的值。
+
+| 参数 | 类型 | 描述 |
+| :-: | :-: | :-: |
+| object | {[key: string]: any} | 以键-值对设置共享变量 |
 
 ## 服务
 
 ### 初始化
 
+通过 `Libra.Service.initialize(className)` 进行初始化。
+
 ### 注册
+
+通过 `Libra.Service.register(className, definition)` 进行注册，参数说明如下：
+
+| 参数 | 类型 | 描述 | 例子 |
+| :-: | :-: | :-: | :-: |
+| className | string | 服务类名，将会在初始化步骤使用 | "filterPointService" |
+| option | ServiceDefinition |  |  |
+
+ServiceDefinition 对象包含以下属性：
+
+| 属性 | 类型 | 描述 | 例子 |
+| :-: | :-: | :-: | :-: |
+| constructor | Service | 该类的基类，可以在此基础上扩展 | LayoutService \| SelectionService \| … other defined Service |
+| params | {[key: string]: any} | 评估函数初始参数 |  |
+| sharedVar | {[key: string]: any} | 共享变量。当给出共享变量后，将会执行初始化过的评估函数 |  |
+| evaluate | Function (sharedVarsAndParams) => any | 评估函数，参数为输入参数和用户定义的共享变量，返回值将传给相关联的转换器 |  |
 
 ### 注销
 
-### 内置服务类
+通过 `Libra.Service.unregister(className)` 进行注销，`className` 与注册时 `className` 相同。
+
+### 内置转换器
+
+| 转换器名 | 描述 |
+| :-: | :-: |
+| SelectionService | 从图层选择元素的服务 |
+| LayoutService | 计算元素的新的布局 |
+| AnalysisService | 分析及运算 |
 
 ### 实例 API
+
+#### getSharedVar
+
+获取工具的共享变量，返回对应的变量值。
+
+| 参数 | 类型 | 描述 |
+| :-: | :-: | :-: |
+| sharedName | string | 共享变量的名字 |
+
+#### setSharedVar
+
+设置共享变量的值。
+
+| 参数 | 类型 | 描述 |
+| :-: | :-: | :-: |
+| sharedName | string | 共享变量的名字 |
+| value | any | 共享变量的值 |
+
+#### isInstanceOf
+
+判定服务实例是否是指定的服务类型。
+
+| 参数 | 类型 | 描述 | 例子 |
+| :-: | :-: | :-: | :-: |
+| className | string | 服务类型 | "SelectionService" | 
