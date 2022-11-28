@@ -36,12 +36,13 @@ nav:
     - "EVA": papers\eva\index.md
     - "Libra": papers\libra\index.md
     - "Lyra 2": papers\lyra2\index.md
+    - "Partical-Based Fluid Simulation": papers\particle-based_fluid_simulation\index.md
+    - "Surface Reconstruction for SPH": papers\surface_reconstruction_for_SPH\index.md
   - D3:
     - D3\index.md
     - libra: D3\libra.md
-  - 其他参考:
-    - others\index.md
-    - "利用 Libra 模型解释 Lyra 2 的相关操作": others\libra&lyra2.md 
+  - 进度:
+    - process\index.md
 
 markdown_extensions:
   - pymdownx.arithmatex:

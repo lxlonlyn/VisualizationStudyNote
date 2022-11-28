@@ -1,0 +1,117 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="timeline">
+    <div class="entry">
+        <div class="timeline-title">
+            <h3>2022</h3>
+            <p>11.21-11.27</p>
+        </div>
+        <div class="timeline-body">
+            <p>研究从粒子重构表面的项目</p>
+            <ul>
+                <li>已完成运行环境配置</li>
+                <li>正在分析具体代码，学习 Eigen</li>
+                <li>阅读论文：Adaptive Surface Reconstruction for SPH using 3-Level Uniform Grids</li>
+                <li>阅读论文：Particle-Based Fluid Simulation for Interactive Applications</li>
+                <li>学习数据可视化工具 paraview</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+{{ super() }}
+
+{% endblock %}
+
+{% block styles %}
+
+{{ super() }}
+
+<style>
+
+@charset "UTF-8";
+
+.timeline {
+  width: 100%;
+  /* max-width: 800px; */
+  background: #fff;
+  padding: 60px 0px;
+  position: relative;
+  /* box-shadow: 0.5rem 0.5rem 2rem 0 rgba(0, 0, 0, 0.2); */
+}
+.timeline:before { /* 设置分界线 */
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: calc(20% + 15px);
+  bottom: 0px;
+  width: 4px;
+  background: #ddd;
+}
+.timeline:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.entry {
+  clear: both;
+  text-align: left;
+  position: relative;
+}
+.entry .timeline-title {
+  margin-bottom: 0.5em;
+  float: left;
+  width: 20%;
+  padding-right: 30px;
+  text-align: right;
+  position: relative;
+}
+.entry .timeline-title:before {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border: 4px solid salmon;
+  background-color: #fff;
+  border-radius: 100%;
+  top: 15%;
+  right: -25px;
+  z-index: 99;
+}
+.entry .timeline-title h3 {
+  margin: 0;
+  font-size: 120%;
+}
+.entry .timeline-title p {
+  margin: 0;
+  font-size: 100%;
+}
+.entry .timeline-body {
+  margin: 0 0 3em;
+  float: right;
+  width: 75%;
+  padding-left: 30px;
+}
+.entry .timeline-body p {
+  line-height: 1.4em;
+}
+.entry .timeline-body p:first-child {
+  margin-top: 0;
+  font-weight: 400;
+}
+.entry .timeline-body ul {
+  color: #aaa;
+  padding-left: 0;
+  list-style-type: none;
+}
+.entry .timeline-body ul li:before {
+  content: "–";
+  margin-right: 0.5em;
+}
+
+</style>
+
+{% endblock %}
