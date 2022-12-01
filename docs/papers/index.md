@@ -8,7 +8,8 @@
 | :---: | :---: | :---: |
 | 2022.11.18 | [Adaptive Surface Reconstruction for SPH using 3-Level Uniform Grids](surface_reconstruction_for_SPH\index.md) | :book: | 
 | 2022.11.18 | [Particle-Based Fluid Simulation for Interactive Applications](particle-based_fluid_simulation\index.md) | :book: | 
-
+| 2022.11.28 | [ComplexGen: CAD Reconstruction by B-Rep Chain Complex Generation](complexgen\index.md) | :book: | 
+| 2022.11.28 | [A Wavelet-Based Progressive Compression Scheme for Triangle Meshes : Wavemesh](wavemesh\index.md) | :book: |
 
 ## 2022.10
 

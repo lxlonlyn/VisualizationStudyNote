@@ -38,6 +38,8 @@ nav:
     - "Lyra 2": papers\lyra2\index.md
     - "Partical-Based Fluid Simulation": papers\particle-based_fluid_simulation\index.md
     - "Surface Reconstruction for SPH": papers\surface_reconstruction_for_SPH\index.md
+    - "ComplexGen": papers\complexgen\index.md
+    - "Wavemesh": papers\wavemesh\index.md
   - D3:
     - D3\index.md
     - libra: D3\libra.md
