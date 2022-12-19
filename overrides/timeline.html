@@ -2,14 +2,72 @@
 
 {% block content %}
 
+<div class="timeline-future">
+    <div class="entry">
+        <div class="timeline-title">
+            <h3>2022</h3>
+            <p>12.26-1.1</p>
+        </div>
+        <div class="timeline-body">
+            <p>项目工作暂缓 & 毕设开题答辩 + 毕业实习答辩</p>
+            <ul>
+                <li>项目方面工作在此期间暂缓，电脑损坏带来的数据丢失影响较大，预计将分担较多时间</li>
+                <li>12.26-27 编写开题文档、编写开题 PPT</li>
+                <li>12.28 开题文档提交</li>
+                <li>12.29 开题答辩、实习答辩文档提交</li>
+                <li>12.30 实习答辩</li>
+                <li>12.31 根据开题答辩，重新提交开题文档</li>
+            </ul>
+        </div>
+    </div>
+    <div class="entry">
+        <div class="timeline-title">
+            <h3>2022</h3>
+            <p>12.19-12.25</p>
+        </div>
+        <div class="timeline-body">
+            <p>研究项目 & 毕设相关工作暂缓</p>
+            <ul>
+                <li>研究项目，搞清具体内部原理，以便后续工作</li>
+                <li>毕设相关工作在此期间暂缓</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
 <div class="timeline">
+    <div class="entry">
+        <div class="timeline-title">
+            <h3>2022</h3>
+            <p>12.12-12.18</p>
+        </div>
+        <div class="timeline-body">
+            <p>电脑坏了，更新换代</p>
+            <ul>
+                <li>持续时间 12.10-12.18</li>
+                <li>硬盘问题导致毕设内容完全损失</li>
+            </ul>
+        </div>
+    </div>
+    <div class="entry">
+        <div class="timeline-title">
+            <h3>2022</h3>
+            <p>12.5-12.11</p>
+        </div>
+        <div class="timeline-body">
+            <p>研究项目 & 毕业设计立题</p>
+            <ul>
+                <li>研究 Isosurface 项目，回顾 Visual Data Analytics 相关内容</li>
+            </ul>
+        </div>
+    </div>
     <div class="entry">
         <div class="timeline-title">
             <h3>2022</h3>
             <p>11.28-12.4</p>
         </div>
         <div class="timeline-body">
-            <p>了解几何简化(geometry simplification)相关知识</p>
+            <p>了解 geometry simplification 相关知识</p>
             <ul>
                 <li>阅读论文：ComplexGen: CAD Reconstruction by B-Rep Chain Complex Generation</li>
                 <li>阅读论文：A Wavelet-Based Progressive Compression Scheme for Triangle Meshes : Wavemesh</li>
@@ -50,7 +108,7 @@
   width: 100%;
   /* max-width: 800px; */
   background: #fff;
-  padding: 60px 0px;
+  padding: 0px 0px 0px 0px;
   position: relative;
   /* box-shadow: 0.5rem 0.5rem 2rem 0 rgba(0, 0, 0, 0.2); */
 }
@@ -62,8 +120,37 @@
   bottom: 0px;
   width: 4px;
   background: #ddd;
+  /* background-image: linear-gradient(to bottom, #ccc 0%, #ccc 50%, transparent 50%);
+    background-size: 4px 20px;
+    background-repeat: repeat-y; */
 }
 .timeline:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.timeline-future {
+  width: 100%;
+  /* max-width: 800px; */
+  background: #fff;
+  padding: 60px 0px 0px 0px;
+  position: relative;
+  /* box-shadow: 0.5rem 0.5rem 2rem 0 rgba(0, 0, 0, 0.2); */
+}
+.timeline-future:before { /* 设置分界线 */
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: calc(20% + 15px);
+  bottom: 0px;
+  width: 4px;
+  /* background: #ddd; */
+  background-image: linear-gradient(to bottom, #ccc 0%, #ccc 50%, transparent 50%);
+    background-size: 4px 20px;
+    background-repeat: repeat-y;
+}
+.timeline-future:after {
   content: "";
   display: table;
   clear: both;
