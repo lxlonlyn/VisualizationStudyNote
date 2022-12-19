@@ -9,7 +9,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.8">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
     
     
       
@@ -19,10 +19,10 @@
     
 
 
-      <link rel="stylesheet" href="../assets/stylesheets/main.20d9efc8.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.975780f9.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.815d1a91.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.2505c338.min.css">
         
       
       
@@ -37,7 +37,7 @@
   width: 100%;
   /* max-width: 800px; */
   background: #fff;
-  padding: 60px 0px;
+  padding: 0px 0px 0px 0px;
   position: relative;
   /* box-shadow: 0.5rem 0.5rem 2rem 0 rgba(0, 0, 0, 0.2); */
 }
@@ -49,8 +49,37 @@
   bottom: 0px;
   width: 4px;
   background: #ddd;
+  /* background-image: linear-gradient(to bottom, #ccc 0%, #ccc 50%, transparent 50%);
+    background-size: 4px 20px;
+    background-repeat: repeat-y; */
 }
 .timeline:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.timeline-future {
+  width: 100%;
+  /* max-width: 800px; */
+  background: #fff;
+  padding: 60px 0px 0px 0px;
+  position: relative;
+  /* box-shadow: 0.5rem 0.5rem 2rem 0 rgba(0, 0, 0, 0.2); */
+}
+.timeline-future:before { /* 设置分界线 */
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: calc(20% + 15px);
+  bottom: 0px;
+  width: 4px;
+  /* background: #ddd; */
+  background-image: linear-gradient(to bottom, #ccc 0%, #ccc 50%, transparent 50%);
+    background-size: 4px 20px;
+    background-repeat: repeat-y;
+}
+.timeline-future:after {
   content: "";
   display: table;
   clear: both;
@@ -143,7 +172,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="None" data-md-color-accent="None">
   
     
     
@@ -1018,14 +1047,72 @@
               <article class="md-content__inner md-typeset">
                 
 
+<div class="timeline-future">
+    <div class="entry">
+        <div class="timeline-title">
+            <h3>2022</h3>
+            <p>12.26-1.1</p>
+        </div>
+        <div class="timeline-body">
+            <p>项目工作暂缓 & 毕设开题答辩 + 毕业实习答辩</p>
+            <ul>
+                <li>项目方面工作在此期间暂缓，电脑损坏带来的数据丢失影响较大，预计将分担较多时间</li>
+                <li>12.26-27 编写开题文档、编写开题 PPT</li>
+                <li>12.28 开题文档提交</li>
+                <li>12.29 开题答辩、实习答辩文档提交</li>
+                <li>12.30 实习答辩</li>
+                <li>12.31 根据开题答辩，重新提交开题文档</li>
+            </ul>
+        </div>
+    </div>
+    <div class="entry">
+        <div class="timeline-title">
+            <h3>2022</h3>
+            <p>12.19-12.25</p>
+        </div>
+        <div class="timeline-body">
+            <p>研究项目 & 毕设相关工作暂缓</p>
+            <ul>
+                <li>研究项目，搞清具体内部原理，以便后续工作</li>
+                <li>毕设相关工作在此期间暂缓</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
 <div class="timeline">
+    <div class="entry">
+        <div class="timeline-title">
+            <h3>2022</h3>
+            <p>12.12-12.18</p>
+        </div>
+        <div class="timeline-body">
+            <p>电脑坏了，更新换代</p>
+            <ul>
+                <li>持续时间 12.10-12.18</li>
+                <li>硬盘问题导致毕设内容完全损失</li>
+            </ul>
+        </div>
+    </div>
+    <div class="entry">
+        <div class="timeline-title">
+            <h3>2022</h3>
+            <p>12.5-12.11</p>
+        </div>
+        <div class="timeline-body">
+            <p>研究项目 & 毕业设计立题</p>
+            <ul>
+                <li>研究 Isosurface 项目，回顾 Visual Data Analytics 相关内容</li>
+            </ul>
+        </div>
+    </div>
     <div class="entry">
         <div class="timeline-title">
             <h3>2022</h3>
             <p>11.28-12.4</p>
         </div>
         <div class="timeline-body">
-            <p>了解几何简化(geometry simplification)相关知识</p>
+            <p>了解 geometry simplification 相关知识</p>
             <ul>
                 <li>阅读论文：ComplexGen: CAD Reconstruction by B-Rep Chain Complex Generation</li>
                 <li>阅读论文：A Wavelet-Based Progressive Compression Scheme for Triangle Meshes : Wavemesh</li>
@@ -1122,7 +1209,7 @@
     <script id="__config" type="application/json">{"base": "..", "features": ["navigation.indexes", "navigation.tabs", "navigation.tracking"], "search": "../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\uff0c\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.d6c3db9e.min.js"></script>
+      <script src="../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
       
         <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
       
@@ -1136,6 +1223,7 @@
       
         <script src="../javascripts/site.js"></script>
       
+    
     
   </body>
 </html>
