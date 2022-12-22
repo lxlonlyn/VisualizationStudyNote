@@ -2,6 +2,12 @@
 
 记录阅读相关论文的笔记。
 
+## 2022.12
+
+| 时间 | 文章 | 状态 |
+| :---: | :---: | :---: |
+| 2022.12.19 | [Dual Marching Cubes: Primal Contouring of Dual Grids](dmc\index.md) | :book: | 
+
 ## 2022.11
 
 | 时间 | 文章 | 状态 |
