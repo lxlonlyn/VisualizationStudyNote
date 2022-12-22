@@ -8,140 +8,24 @@
       
       
       
-      <link rel="icon" href="../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
     
     
-<title>时间轴</title>
-
+      
+        <title>Dual Marching Cubes - Visualization Study Note</title>
+      
     
-
-
-      <link rel="stylesheet" href="../assets/stylesheets/main.975780f9.min.css">
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.975780f9.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.2505c338.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
         
       
       
 
     
-
-<style>
-
-@charset "UTF-8";
-
-.timeline {
-  width: 100%;
-  /* max-width: 800px; */
-  background: #fff;
-  padding: 0px 0px 0px 0px;
-  position: relative;
-  /* box-shadow: 0.5rem 0.5rem 2rem 0 rgba(0, 0, 0, 0.2); */
-}
-.timeline:before { /* 设置分界线 */
-  content: "";
-  position: absolute;
-  top: 0px;
-  left: calc(20% + 15px);
-  bottom: 0px;
-  width: 4px;
-  background: #ddd;
-  /* background-image: linear-gradient(to bottom, #ccc 0%, #ccc 50%, transparent 50%);
-    background-size: 4px 20px;
-    background-repeat: repeat-y; */
-}
-.timeline:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-.timeline-future {
-  width: 100%;
-  /* max-width: 800px; */
-  background: #fff;
-  padding: 60px 0px 0px 0px;
-  position: relative;
-  /* box-shadow: 0.5rem 0.5rem 2rem 0 rgba(0, 0, 0, 0.2); */
-}
-.timeline-future:before { /* 设置分界线 */
-  content: "";
-  position: absolute;
-  top: 0px;
-  left: calc(20% + 15px);
-  bottom: 0px;
-  width: 4px;
-  /* background: #ddd; */
-  background-image: linear-gradient(to bottom, #ccc 0%, #ccc 50%, transparent 50%);
-    background-size: 4px 20px;
-    background-repeat: repeat-y;
-}
-.timeline-future:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-.entry {
-  clear: both;
-  text-align: left;
-  position: relative;
-}
-.entry .timeline-title {
-  margin-bottom: 0.5em;
-  float: left;
-  width: 20%;
-  padding-right: 30px;
-  text-align: right;
-  position: relative;
-}
-.entry .timeline-title:before {
-  content: "";
-  position: absolute;
-  width: 16px;
-  height: 16px;
-  border: 4px solid salmon;
-  background-color: #fff;
-  border-radius: 100%;
-  top: 15%;
-  right: -25px;
-  z-index: 99;
-}
-.entry .timeline-title h3 {
-  margin: 0;
-  font-size: 120%;
-}
-.entry .timeline-title p {
-  margin: 0;
-  font-size: 100%;
-}
-.entry .timeline-body {
-  margin: 0 0 3em;
-  float: right;
-  width: 75%;
-  padding-left: 30px;
-}
-.entry .timeline-body p {
-  line-height: 1.4em;
-}
-.entry .timeline-body p:first-child {
-  margin-top: 0;
-  font-weight: 400;
-}
-.entry .timeline-body ul {
-  color: #aaa;
-  padding-left: 0;
-  list-style-type: none;
-}
-.entry .timeline-body ul li:before {
-  content: "–";
-  margin-right: 0.5em;
-}
-
-</style>
-
-
     
     
       
@@ -155,7 +39,7 @@
     
       <link rel="stylesheet" href="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.css">
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -180,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#dual-marching-cubes-primal-contouring-of-dual-grids" class="md-skip">
           跳转至
         </a>
       
@@ -194,7 +78,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href=".." title="Visualization Study Note" class="md-header__button md-logo" aria-label="Visualization Study Note" data-md-component="logo">
+    <a href="../.." title="Visualization Study Note" class="md-header__button md-logo" aria-label="Visualization Study Note" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -213,7 +97,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Index
+              Dual Marching Cubes
             
           </span>
         </div>
@@ -279,40 +163,8 @@
   
   
     <li class="md-tabs__item">
-      <a href=".." class="md-tabs__link">
+      <a href="../.." class="md-tabs__link">
         简介
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../papers/" class="md-tabs__link">
-        论文
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../D3/" class="md-tabs__link">
-        D3
       </a>
     </li>
   
@@ -329,7 +181,39 @@
   
   
     <li class="md-tabs__item">
-      <a href="./" class="md-tabs__link md-tabs__link--active">
+      <a href="../" class="md-tabs__link md-tabs__link--active">
+        论文
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../D3/" class="md-tabs__link">
+        D3
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../process/" class="md-tabs__link">
         进度
       </a>
     </li>
@@ -347,9 +231,7 @@
           
             
               
-                
-              
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -359,7 +241,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Visualization Study Note" class="md-nav__button md-logo" aria-label="Visualization Study Note" data-md-component="logo">
+    <a href="../.." title="Visualization Study Note" class="md-nav__button md-logo" aria-label="Visualization Study Note" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -399,7 +281,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="..">简介</a>
+          <a href="../..">简介</a>
           
             <label for="__nav_1">
               <span class="md-nav__icon md-icon"></span>
@@ -422,7 +304,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         关于本项目
       </a>
     </li>
@@ -442,12 +324,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
       
       
       
@@ -497,7 +381,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../papers/">论文</a>
+          <a href="../">论文</a>
           
             <label for="__nav_2">
               <span class="md-nav__icon md-icon"></span>
@@ -520,7 +404,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../papers/star_retrieval/" class="md-nav__link">
+      <a href="../star_retrieval/" class="md-nav__link">
         STAR Retrieval
       </a>
     </li>
@@ -534,7 +418,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../papers/eva/" class="md-nav__link">
+      <a href="../eva/" class="md-nav__link">
         EVA
       </a>
     </li>
@@ -548,7 +432,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../papers/libra/" class="md-nav__link">
+      <a href="../libra/" class="md-nav__link">
         Libra
       </a>
     </li>
@@ -562,7 +446,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../papers/lyra2/" class="md-nav__link">
+      <a href="../lyra2/" class="md-nav__link">
         Lyra 2
       </a>
     </li>
@@ -576,7 +460,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../papers/particle-based_fluid_simulation/" class="md-nav__link">
+      <a href="../particle-based_fluid_simulation/" class="md-nav__link">
         Partical-Based Fluid Simulation
       </a>
     </li>
@@ -590,7 +474,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../papers/surface_reconstruction_for_SPH/" class="md-nav__link">
+      <a href="../surface_reconstruction_for_SPH/" class="md-nav__link">
         Surface Reconstruction for SPH
       </a>
     </li>
@@ -604,7 +488,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../papers/complexgen/" class="md-nav__link">
+      <a href="../complexgen/" class="md-nav__link">
         ComplexGen
       </a>
     </li>
@@ -618,7 +502,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../papers/wavemesh/" class="md-nav__link">
+      <a href="../wavemesh/" class="md-nav__link">
         Wavemesh
       </a>
     </li>
@@ -630,11 +514,93 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../papers/dmc/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Dual Marching Cubes
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Dual Marching Cubes
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    相关文件
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    主要介绍
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    特征提取
+  </a>
+  
+    <nav class="md-nav" aria-label="特征提取">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    八叉树构建
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    拓扑结构构建
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    绘制轮廓
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -673,7 +639,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../D3/">D3</a>
+          <a href="../../D3/">D3</a>
           
             <label for="__nav_3">
               <span class="md-nav__icon md-icon"></span>
@@ -696,7 +662,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../D3/libra/" class="md-nav__link">
+      <a href="../../D3/libra/" class="md-nav__link">
         libra
       </a>
     </li>
@@ -716,14 +682,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
       
       
       
@@ -736,8 +700,8 @@
       
         
         
-        <div class="md-nav__link md-nav__link--index md-nav__link--active">
-          <a href="./">进度</a>
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../process/">进度</a>
           
         </div>
       
@@ -764,9 +728,7 @@
             
             
               
-                
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -778,6 +740,62 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    相关文件
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    主要介绍
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    特征提取
+  </a>
+  
+    <nav class="md-nav" aria-label="特征提取">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    八叉树构建
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    拓扑结构构建
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    绘制轮廓
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -788,114 +806,57 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-
-<div class="timeline-future">
-    <div class="entry">
-        <div class="timeline-title">
-            <h3>2022</h3>
-            <p>12.26-1.1</p>
-        </div>
-        <div class="timeline-body">
-            <p>项目工作暂缓 & 毕设开题答辩 + 毕业实习答辩</p>
-            <ul>
-                <li>项目方面工作在此期间暂缓，电脑损坏带来的数据丢失影响较大，预计将分担较多时间</li>
-                <li>12.26-27 编写开题文档、编写开题 PPT</li>
-                <li>12.28 开题文档提交</li>
-                <li>12.29 开题答辩、实习答辩文档提交</li>
-                <li>12.30 实习答辩</li>
-                <li>12.31 根据开题答辩，重新提交开题文档</li>
-            </ul>
-        </div>
-    </div>
-    <div class="entry">
-        <div class="timeline-title">
-            <h3>2022</h3>
-            <p>12.19-12.25</p>
-        </div>
-        <div class="timeline-body">
-            <p>研究项目 & 毕设相关工作暂缓</p>
-            <ul>
-                <li>回顾 Marching Cube 及八叉树</li>
-                <li>阅读论文：Dual Marching Cubes: Primal Contouring of Dual Grids</li>
-                <li>学习 OpenMP</li>
-                <li>毕设相关工作在此期间暂缓</li>
-            </ul>
-        </div>
-    </div>
-</div>
-
-<div class="timeline">
-    <div class="entry">
-        <div class="timeline-title">
-            <h3>2022</h3>
-            <p>12.12-12.18</p>
-        </div>
-        <div class="timeline-body">
-            <p>电脑坏了，更新换代</p>
-            <ul>
-                <li>持续时间 12.10-12.18</li>
-                <li>硬盘问题导致毕设内容完全损失</li>
-            </ul>
-        </div>
-    </div>
-    <div class="entry">
-        <div class="timeline-title">
-            <h3>2022</h3>
-            <p>12.5-12.11</p>
-        </div>
-        <div class="timeline-body">
-            <p>研究项目 & 毕业设计立题</p>
-            <ul>
-                <li>研究 Isosurface 项目，回顾 Visual Data Analytics 相关内容</li>
-            </ul>
-        </div>
-    </div>
-    <div class="entry">
-        <div class="timeline-title">
-            <h3>2022</h3>
-            <p>11.28-12.4</p>
-        </div>
-        <div class="timeline-body">
-            <p>了解 geometry simplification 相关知识</p>
-            <ul>
-                <li>阅读论文：ComplexGen: CAD Reconstruction by B-Rep Chain Complex Generation</li>
-                <li>阅读论文：A Wavelet-Based Progressive Compression Scheme for Triangle Meshes : Wavemesh</li>
-            </ul>
-        </div>
-    </div>
-    <div class="entry">
-        <div class="timeline-title">
-            <h3>2022</h3>
-            <p>11.21-11.27</p>
-        </div>
-        <div class="timeline-body">
-            <p>研究从粒子重构表面的项目</p>
-            <ul>
-                <li>已完成运行环境配置</li>
-                <li>正在分析具体代码，学习 Eigen</li>
-                <li>阅读论文：Adaptive Surface Reconstruction for SPH using 3-Level Uniform Grids</li>
-                <li>阅读论文：Particle-Based Fluid Simulation for Interactive Applications</li>
-                <li>学习数据可视化工具 paraview</li>
-            </ul>
-        </div>
-    </div>
-</div>
-
-
                   
 
 
-<h1 id="_1"></h1>
+<h1 id="dual-marching-cubes-primal-contouring-of-dual-grids">Dual Marching Cubes: Primal Contouring of Dual Grids</h1>
+<h2 id="_1">相关文件</h2>
+<p><a href="paper.pdf">原文 PDF</a></p>
+<h2 id="_2">主要介绍</h2>
+<h2 id="_3">特征提取</h2>
+<p>目标：给定 <span class="arithmatex">\(f(x,y,z)\)</span> 及八叉树，为八叉树的每个“格子”构造一个结点，使其成为对偶网格中的结点。</p>
+<p>与其他方法不同，该结点不与曲面特征对齐，而是与隐函数特征对齐。所以，每个结点包含两种信息：位置 <span class="arithmatex">\((x,y,z)\)</span> 以及 <span class="arithmatex">\(f(x,y,z)\)</span> 在该结点位置的估计值 <span class="arithmatex">\(w\)</span>。</p>
+<p>为了在八叉树“格子” <span class="arithmatex">\(c\)</span> 中找到这样的结点，我们使用二次误差函数（QEF）进行评估。我们在 <span class="arithmatex">\(c\)</span> 的采样点上计算 <span class="arithmatex">\(f(x,y,z)\)</span> 的切平面，设采样点是 <span class="arithmatex">\((x_i,y_i,z_i)\)</span>，则 </p>
+<div class="arithmatex">\[w=T_i(x,y,z)=\nabla f(x_i,y_i,z_i)\cdot((x,y,z)-(x_i,y_i,z_i))\]</div>
+<p>根据此生成的 QEF 为</p>
+<div class="arithmatex">\[E(w,x,y,z)=\sum\limits_{i}\frac{(w-T_i(x,y,z))^2}{1+|\nabla f(x_i,y_i,z_i)|^2}\]</div>
+<p>接下来的目标是最小化 <span class="arithmatex">\(E(w,x,y,z)\)</span> 以找到 <span class="arithmatex">\(c\)</span> 中对偶网格中的结点 <span class="arithmatex">\((w,x,y,z)\)</span>。如果无法计算最小值，则将最小值定位近似于 <span class="arithmatex">\(c\)</span> 的中心。</p>
+<h3 id="_4">八叉树构建</h3>
+<p>八叉树的构造由一个“格子” <span class="arithmatex">\(c\)</span> 开始，使用上述的采样算法进行采样（也可以随机采样），之后构造 QEF 函数并将其最小化。若误差值 <span class="arithmatex">\(E(w,x,y,z)\)</span> 超过规定的最大误差值 <span class="arithmatex">\(\epsilon\)</span>，则将目前的“格子”划分成 8 个小格子，执行目前的操作。这样的操作递归进行，直到每个叶子结点误差值不超过 <span class="arithmatex">\(\epsilon\)</span>。</p>
+<h2 id="_5">拓扑结构构建</h2>
+<p>为了简化，一下内容用四叉树及平面进行演示，可以较为方便地扩展成八叉树及立体。</p>
+<p>任务：给定四叉树 <span class="arithmatex">\(q\)</span>，使用有效的方法找到对偶网格中的每个格子，且不需要在四叉树中找到确定的邻居。</p>
+<p>方法是使用一种递归遍历 <span class="arithmatex">\(q\)</span>，枚举所有具有相同结点的格子。</p>
+<p>遍历涉及三个递归函数 <span class="arithmatex">\(faceProc(q_1)\)</span>、<span class="arithmatex">\(edgeProc(q_1,q_2)\)</span> 及 <span class="arithmatex">\(vertProc(q_1,q_2,q_3,q_4)\)</span>。以下是详细说明：</p>
+<ol>
+<li>给定四叉树内部结点 <span class="arithmatex">\(q_1\)</span>，递归涉及以下三个操作：<ol>
+<li><span class="arithmatex">\(faceProc\)</span> 调用 <span class="arithmatex">\(q_1\)</span> 的四个子结点；</li>
+<li><span class="arithmatex">\(edgeProc\)</span> 调用 4 对具有公共边的 <span class="arithmatex">\(q_1\)</span> 的子结点；</li>
+<li><span class="arithmatex">\(vertProc\)</span> 调用其 4 个子结点（4 子结点作为 1 次调用）；</li>
+</ol>
+</li>
+<li>给定四叉树一对内部结点 <span class="arithmatex">\(q_1,q_2\)</span>，涉及：<ol>
+<li><span class="arithmatex">\(edgeProc\)</span> 调用 2 对公共边为 <span class="arithmatex">\(q_1,q_2\)</span> 公共边一部分的子结点；</li>
+<li><span class="arithmatex">\(vertProc\)</span> 调用与 <span class="arithmatex">\(q_1,q_2\)</span> 公共边相邻的四个结点；</li>
+</ol>
+</li>
+<li>给定四叉树四个具有公共点的内部结点 <span class="arithmatex">\(q_1,q_2,q_3,q_4\)</span>，涉及：<ol>
+<li><span class="arithmatex">\(vertProc\)</span> 调用与 <span class="arithmatex">\(q_1,q_2,q_3,q_4\)</span> 中心具有四个顶点的子结点；</li>
+</ol>
+</li>
+</ol>
+<p><img alt="递归函数 faceProc（黑色）edgeProc（深灰）vertProc（浅灰）" src="recursive%20functions.png" /></p>
+<p>递归函数 faceProc（黑色）edgeProc（深灰）vertProc（浅灰）。</p>
+<p>当递归调用中出现叶子结点时，则将其代替其子结点。当所有的参数都是四叉树的叶子结点时，递归终止。递归终止时，我们将特征提取阶段的顶点连接起来，便得到了正方形。由于程序的自适应，四个结点中可能出现一个重复结点，形成三角形。该方法具有与四叉树大小一致的线性复杂度。</p>
+<p>在上述描述中，faceProc 只生成四叉树根内部结点。为了将对偶网格扩展到四叉树边界，我们将目前的四叉树视为 <span class="arithmatex">\(3\times 3\)</span> 网格的中心结点，其余 4 个结点参与组成四叉树的边界，4 个结点参与组成四叉树的边界顶点。</p>
+<h2 id="_6">绘制轮廓</h2>
+<p>生成对偶网格后，使用 Marching Cube 生成提取曲面。在构建拓扑结构时生成的每个结点可以看作是立方体。在对偶网格结点使用标量值 <span class="arithmatex">\(w\)</span> 来计算每条具有符号变化边的边交点，使用 Marching Cube 的查找表来生成内部表面拓扑。</p>
 
 
-
-  
 
 
 
                 
-
-
               </article>
             </div>
           
@@ -907,12 +868,10 @@
         <footer class="md-footer">
   
     
-      
-    
     <nav class="md-footer__inner md-grid" aria-label="页脚" >
       
         
-        <a href="../D3/libra/" class="md-footer__link md-footer__link--prev" aria-label="上一页: libra" rel="prev">
+        <a href="../wavemesh/" class="md-footer__link md-footer__link--prev" aria-label="上一页: Wavemesh" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -921,11 +880,26 @@
               <span class="md-footer__direction">
                 上一页
               </span>
-              libra
+              Wavemesh
             </div>
           </div>
         </a>
       
+      
+        
+        <a href="../../D3/" class="md-footer__link md-footer__link--next" aria-label="下一页: D3 学习笔记" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              D3 学习笔记
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
       
     </nav>
   
@@ -950,14 +924,14 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.indexes", "navigation.tabs", "navigation.tracking"], "search": "../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\uff0c\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.indexes", "navigation.tabs", "navigation.tracking"], "search": "../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\uff0c\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+      <script src="../../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
       
         <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
       
-        <script src="../javascripts/mathjax.js"></script>
+        <script src="../../javascripts/mathjax.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
@@ -965,7 +939,7 @@
       
         <script src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.js"></script>
       
-        <script src="../javascripts/site.js"></script>
+        <script src="../../javascripts/site.js"></script>
       
     
     
