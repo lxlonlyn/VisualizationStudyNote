@@ -41,9 +41,13 @@ nav:
     - "ComplexGen": papers\complexgen\index.md
     - "Wavemesh": papers\wavemesh\index.md
     - "Dual Marching Cubes": papers\dmc\index.md
-  - D3:
-    - D3\index.md
-    - libra: D3\libra.md
+  # - D3:
+  #   - D3\index.md
+  #   - libra: D3\libra.md
+  # - OpenMP:
+  #   - OpenMP\index.md
+  #   - 序言: OpenMP\intro.md
+  #   - 创建线程: OpenMP\create-threads.md
   - 进度:
     - process\index.md
 
